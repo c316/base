@@ -6,7 +6,7 @@ FlowRouter.notFound = {
 
 Accounts.onLogin( () => {
   let currentRoute = FlowRouter.current();
-  if ( currentRoute && currentRoute.route.group.name === 'public' ) {
+  if ( currentRoute && currentRoute.route && currentRoute.route.group && currentRoute.route.group.name === 'public' ) {
     FlowRouter.go( 'index' );
   }
 });
